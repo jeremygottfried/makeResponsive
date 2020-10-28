@@ -1,0 +1,99 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/scss/_functions.scss';
+@import '../node_modules/bootstrap/scss/_variables.scss';
+@import '../node_modules/bootstrap/scss/_mixins.scss';
+
+@mixin xs {
+  @include media-breakpoint-up(xs) {
+    &-xs {
+      @content;
+    }
+  }
+}
+
+@mixin sm {
+  @include media-breakpoint-up(sm) {
+    &-sm {
+      @content;
+    }
+  }
+}
+
+@mixin md {
+  @include media-breakpoint-up(md) {
+    &-md {
+      @content;
+    }
+  }
+}
+
+@mixin lg {
+  @include media-breakpoint-up(lg) {
+    &-lg {
+      @content;
+    }
+  }
+}
+
+@mixin xl {
+  @include media-breakpoint-up(xl) {
+    &-xl {
+      @content;
+    }
+  }
+}
+
+@mixin makeResponsive($className) {
+  .#{$className} {
+    @content;
+
+    @include xs {
+      @content;
+    }
+    @include sm {
+      @content;
+    }
+    @include md {
+      @content;
+    }
+    @include lg {
+      @content;
+    }
+    @include xl {
+      @content;
+    }
+  }
+}
+
+// EXAMPLE USAGE
+// <div class="font-weight-lg-3 font-weight-sm-2 font-weight-1" ></div>
+
+@include makeResponsive(font-weight) {
+    &-1 {
+      font-weight: 100;
+    }
+    &-2 {
+      font-weight: 200;
+    }
+    &-3 {
+      font-weight: 300;
+    }
+    &-4 {
+      font-weight: 400;
+    }
+    &-5 {
+      font-weight: 500;
+    }
+    &-6 {
+      font-weight: 600;
+    }
+    &-7 {
+      font-weight: 700;
+    }
+    &-8 {
+      font-weight: 800;
+    }
+    &-9 {
+      font-weight: 900;
+    }
+}
