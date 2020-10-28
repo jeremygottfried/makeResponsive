@@ -9,7 +9,7 @@ or
 npm install bootstrap node-sass
 ```
 
-```
+```js
 // App.js
 
 import './index.scss'
